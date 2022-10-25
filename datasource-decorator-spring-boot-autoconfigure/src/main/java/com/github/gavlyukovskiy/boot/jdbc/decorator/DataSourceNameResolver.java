@@ -44,7 +44,7 @@ public class DataSourceNameResolver {
         this.applicationContext = applicationContext;
     }
 
-    public String resolveDataSourceName(CommonDataSource dataSource) {
+    public String resolveDataSourceName(CommonDataSource dataSource, String fallbackName) {
         String dataSourceName = cachedNames.get(dataSource);
         if (dataSourceName == null) {
             // even if two threads compute this in parallel result will be the same
@@ -67,7 +67,7 @@ public class DataSourceNameResolver {
                         })
                         .findFirst()
                         .map(Entry::getKey)
-                        .orElse("dataSource");
+                        .orElse(fallbackName);
                 cachedNames.put(dataSource, dataSourceName);
             }
         }

@@ -51,7 +51,7 @@ public class ProxyDataSourceDecorator implements DataSourceDecorator, Ordered {
         ProxyDataSourceBuilder proxyDataSourceBuilder = ProxyDataSourceBuilder.create();
         DataSourceProxyProperties datasourceProxy = dataSourceDecoratorProperties.getDatasourceProxy();
         proxyDataSourceBuilderConfigurer.configure(proxyDataSourceBuilder, datasourceProxy);
-        String dataSourceName = dataSourceNameResolver.resolveDataSourceName(dataSource);
+        String dataSourceName = dataSourceNameResolver.resolveDataSourceName(dataSource, beanName);
         return proxyDataSourceBuilder.dataSource(dataSource).name(dataSourceName).build();
     }
 
