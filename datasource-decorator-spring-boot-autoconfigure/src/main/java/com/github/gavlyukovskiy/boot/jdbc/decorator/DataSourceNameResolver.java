@@ -19,6 +19,7 @@ package com.github.gavlyukovskiy.boot.jdbc.decorator;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.util.ClassUtils;
+import org.springframework.util.StringUtils;
 
 import javax.sql.CommonDataSource;
 import javax.sql.DataSource;
@@ -67,7 +68,7 @@ public class DataSourceNameResolver {
                         })
                         .findFirst()
                         .map(Entry::getKey)
-                        .orElse(fallbackName);
+                        .orElse(StringUtils.hasText(fallbackName) ? fallbackName : "dataSource");
                 cachedNames.put(dataSource, dataSourceName);
             }
         }
