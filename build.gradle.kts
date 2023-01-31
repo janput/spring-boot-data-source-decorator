@@ -15,6 +15,7 @@ scmVersion {
 
 group = "com.github.gavlyukovskiy"
 version = scmVersion.version
+version = "1.0.0"
 
 val sonatypeUser: String? = project.properties["sonatype_user"]?.toString()
     ?: System.getenv("SONATYPE_USER")
