@@ -38,14 +38,14 @@ jobs:
             -Prelease.customUsername=${{ github.actor }} \
             -Prelease.customPassword=${{ github.token }}
 
-      - name: Upload release artifacts to Sonatype
-        id: upload_release_artifacts
-        env:
-          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}
-          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
-          GPG_KEY: ${{ secrets.GPG_KEY }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: ./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository
+#      - name: Upload release artifacts to Sonatype
+#        id: upload_release_artifacts
+#        env:
+#          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}
+#          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+#          GPG_KEY: ${{ secrets.GPG_KEY }}
+#          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+#        run: ./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository
 
       - name: Create GitHub Release
         id: create_release
