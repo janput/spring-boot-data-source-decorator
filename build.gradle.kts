@@ -57,6 +57,14 @@ subprojects {
 
     repositories {
         mavenCentral()
+        maven {
+            name = "Nexus-release"
+            url = uri("https://nexusprod.onemrva.priv/maven-release/")
+            credentials {
+                username = "janput"
+                password = "password"
+            }
+        }
     }
 
     if (extra["release"] as Boolean) {
