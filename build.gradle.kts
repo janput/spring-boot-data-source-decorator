@@ -90,7 +90,7 @@ subprojects {
                     pom {
                         name.set(project.name)
                         description.set("Spring Boot integration with p6spy, datasource-proxy and flexy-pool")
-                        url.set("https://github.com/gavlyukovskiy/spring-boot-data-source-decorator")
+                        url.set("https://github.com/janput/spring-boot-data-source-decorator")
                         licenses {
                             license {
                                 name.set("The Apache Software License, Version 2.0")
@@ -103,9 +103,14 @@ subprojects {
                                 name.set("Arthur Gavlyukovskiy")
                                 email.set("agavlyukovskiy@gmail.com")
                             }
+                            developer {
+                                id.set("janput")
+                                name.set("Jan Put")
+                                email.set("jan.put@gmail.com")
+                            }
                         }
                         scm {
-                            url.set("https://github.com/gavlyukovskiy/spring-boot-data-source-decorator")
+                            url.set("https://github.com/janput/spring-boot-data-source-decorator")
                         }
                     }
                 }
